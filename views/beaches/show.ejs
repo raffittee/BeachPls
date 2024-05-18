@@ -1,0 +1,39 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="row">
+  <div class="col-6 offset-3">
+    <a href="/beaches" class="btn btn-outline-secondary mb-3">All Beaches</a>
+    <div class="card mb-3" style="width: 100%">
+      <img
+        src="/img/<%= beach.image %>"
+        class="card-img-top"
+        alt="Beach Picture"
+      />
+      <div class="card-body">
+        <h5 class="card-title"><%= beach.name %></h5>
+        <p class="card-text"><%= beach.description %></p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item text-muted"><%= beach.address %></li>
+        <li class="list-group-item"><%= beach.phone %></li>
+        <li class="list-group-item">
+          <%= beach.stars %> <i class="fa fa-star" aria-hidden="true"></i>
+        </li>
+      </ul>
+      <div class="card-body">
+        <a
+          href="/beaches/<%= beach._id %>/edit"
+          class="card-link btn btn-warning"
+          >Edit Beach</a
+        >
+        <form
+          class="d-inline"
+          action="/beaches/<%= beach._id %>?_method=DELETE"
+          method="post"
+        >
+          <button class="btn btn-danger">Delete Beach</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

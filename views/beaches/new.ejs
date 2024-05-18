@@ -1,0 +1,75 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="col-6 offset-3">
+  <h1 class="text-center">New Beach</h1>
+  <form action="/beaches" method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name="beaches[name]" />
+    </div>
+    <div class="mb-3">
+      <label for="address" class="form-label">Address</label>
+      <input
+        type="text"
+        class="form-control"
+        id="address"
+        name="beaches[address]"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone</label>
+      <input
+        type="text"
+        class="form-control"
+        id="phone"
+        name="beaches[phone]"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="lat" class="form-label">Latitude</label>
+      <input
+        type="number"
+        class="form-control"
+        step="any"
+        id="lat"
+        name="beaches[lat]"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="lng" class="form-label">Longitude</label>
+      <input
+        type="number"
+        class="form-control"
+        step="any"
+        id="lng"
+        name="beaches[lng]"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea
+        name="beaches[description]"
+        id="description"
+        class="form-control"
+        cols="30"
+        rows="5"
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="image" class="form-label">Image</label>
+      <input
+        type="file"
+        class="form-control"
+        id="image"
+        name="image"
+        accept="image/*"
+      />
+    </div>
+    <div class="mb-3">
+      <button class="btn btn-success">Add Beach</button>
+    </div>
+  </form>
+  <div class="mb-3">
+    <a href="/beaches">All Beaches</a>
+  </div>
+</div>

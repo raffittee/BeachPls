@@ -1,0 +1,31 @@
+<% layout("layouts/boilerplate") %>
+<link rel="stylesheet" href="/css/app.css" />
+<div class="d-flex align-items-center justify-content-between mb-3">
+  <h1 class="mb-0">All Beaches</h1>
+  <a href="/beaches/new" class="btn btn-outline-secondary">Add new beach</a>
+</div>
+<% for (let beach of beaches) {%>
+<div class="card mb-3">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="/img/<%= beach.image %>" alt="" class="img-fluid" />
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><%= beach.name %></h5>
+        <p class="card-text"><%= beach.description %></p>
+        <p class="card-text">
+          <small class="text-muted"><%= beach.address %></small>
+        </p>
+        <a href="/beaches/<%= beach._id %>" class="btn btn-primary"
+          >View Beach</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<% } %>
+<button id="scrollToTopBtn" class="btn btn-outline-secondary" title="Go to top">
+  Back to top
+</button>
+<script src="/js/scripts.js"></script>
