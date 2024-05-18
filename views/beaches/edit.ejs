@@ -79,7 +79,11 @@
           name="beaches[image]"
           accept="image/*"
         />
-        <input type="hidden" value="<%= beach.image %>" />
+        <input
+          type="hidden"
+          name="beaches[temp_image]"
+          value="<%= beach.image %>"
+        />
       </div>
       <div class="mb-3">
         <button class="btn btn-success">Update Beach</button>

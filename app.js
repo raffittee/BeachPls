@@ -58,7 +58,11 @@ app.get("/beaches/:id/edit", async (req, res) => {
 // Update beach form
 app.put("/beaches/:id", async (req, res) => {
   const { id } = req.params;
-  console.log({ ...req.body.beaches });
+  const new_image = req.body.beaches.image;
+  const current_image = req.body.beaches.temp_image;
+  if (!new_image) {
+    req.body.beaches.image = current_image;
+  }
   await Beach.findByIdAndUpdate(
     id,
     { ...req.body.beaches },
